@@ -1,0 +1,80 @@
+* {
+    /* border: 1px solid white; */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+body {
+    margin: 0;
+    background-color: #060f2b;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.inner-container {
+    display: flex;
+    column-gap: .2rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#username {
+    color: #518afe;
+}
+
+#lecture-time {
+    background-color: #11182e;
+    color: #808994;
+    font-weight: bold;
+    width: 11rem;
+    height: 1.7rem;
+    border-radius: .2rem;
+    border: .1rem solid #293043;
+    text-align: center;
+    flex-basis: 80%;
+}
+
+#btn-search {
+    background-color: #518afe;
+    border: none;
+    border-radius: .2rem;
+    flex-basis: 20%;
+    transition: all .3s;
+}
+
+#magnifying-glass {
+    margin: auto;
+    display: block;
+}
+
+#output {
+    white-space: pre-wrap;
+    margin-top: 3rem;
+}
+
+#author {
+    color: #adadb8;
+    font-size: .9rem;
+}
+
+#lecture-time:focus {
+    outline: none;
+}
+
+#btn-search:hover {
+    cursor: pointer;
+    background-color: #266cff;
+}
