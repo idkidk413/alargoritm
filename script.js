@@ -1,5 +1,3 @@
-const CORS_PROXY = 'https://corsproxysmh.herokuapp.com';
-
 const zeroPad = (num, size) => String(num).padStart(size, '0');
 const outputUpdate = text => document.querySelector('#output').innerHTML = text;
 
@@ -9,7 +7,7 @@ document.querySelector('#btn-search').onclick = async () => {
 
     if (lectureTime != '') {
         outputUpdate('Söker...');
-        const response_1 = await fetch(`${CORS_PROXY}/https://www.vasttrafik.se/api/token/public/renew?expiredToken=b911de69-cb14-38d3-908b-b48c6fe14b0f`);
+        const response_1 = await fetch('https://www.vasttrafik.se/api/token/public/renew?expiredToken=b911de69-cb14-38d3-908b-b48c6fe14b0f');
 
         if (response_1.ok) {
             const jsonToken = await response_1.json();
@@ -19,7 +17,7 @@ document.querySelector('#btn-search').onclick = async () => {
             const lectureTimeAhead = new Date(new Date(lectureTime) - 7200 * 1000).toISOString();
 
             const response_2 = await fetch(
-                `${CORS_PROXY}/https://api.vasttrafik.se/pr/v3/journeys?dateTimeRelatesTo=departure&originGid=0000000800000003&destinationGid=0000000800000001&dateTime=${lectureTimeAhead}&transportModes=train&transportSubModes=vasttagen&transportSubModes=regionalTrain&originWalk=1,0,2000&originCar=0&originBike=0&originPark=0`,
+                `https://api.vasttrafik.se/pr/v3/journeys?dateTimeRelatesTo=departure&originGid=0000000800000003&destinationGid=0000000800000001&dateTime=${lectureTimeAhead}&transportModes=train&transportSubModes=vasttagen&transportSubModes=regionalTrain&originWalk=1,0,2000&originCar=0&originBike=0&originPark=0`,
                 {headers: {'Authorization': `Bearer ${token}`}}
             );
 
